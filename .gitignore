@@ -43,3 +43,86 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# ============================================================================
+# FIREBASE & SECURITY - DO NOT COMMIT
+# ============================================================================
+
+# Firebase configuration files (auto-generated, contain API keys and secrets)
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+
+# Release keystore files (signing keys)
+*.jks
+*.keystore
+*.p12
+*.p8
+
+# Android local properties
+android/local.properties
+
+# iOS Pods and build artifacts
+ios/Pods/
+ios/Pods.lock
+Pods/
+Podfile.lock
+
+# Android gradle cache
+/android/.gradle/
+/android/build/
+
+# Generated plugin files
+**/GeneratedPluginRegistrant.dart
+**/GeneratedPluginRegistrant.h
+**/GeneratedPluginRegistrant.m
+**/GeneratedPluginRegistrant.swift
+**/generated_plugin_registrant.cc
+**/generated_plugin_registrant.h
+**/generated_plugins.cmake
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+.env.*.secret
+
+# Firebase CLI cache
+.firebase/
+.firebaserc
+
+# Xcode build settings
+**/Xcode.build/
+**/xcache/
+**/DerivedData/
+
+# Generated Flutter files
+GeneratedPluginRegistrant.json
+flutter_export_environment.sh
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.cproject
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# OS
+Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.orig

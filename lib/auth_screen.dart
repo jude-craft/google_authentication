@@ -17,8 +17,6 @@ class _AuthScreenState extends State<AuthScreen>
   late Animation<double> _fadeInButton;
   late Animation<Offset> _slideButton;
 
-  bool _isLoading = false;
-
   @override
   void initState() {
     super.initState();
@@ -58,37 +56,30 @@ class _AuthScreenState extends State<AuthScreen>
     _controller.dispose();
     super.dispose();
   }
-// 1. Instantiate the service inside your State class
+
+  bool _isLoading = false;
+
+  // Inistanciate authservice
   final GoogleAuthService _authService = GoogleAuthService();
 
   Future<void> _handleGoogleSignIn() async {
-    setState(() => _isLoading = true);
+    setState(() {
+      _isLoading = true;
+    });
 
-    // 2. Call the real authentication logic
     final user = await _authService.signInWithGoogle();
 
-    // 3. Always check if mounted before doing UI updates or navigation after an async gap
     if (!mounted) return;
 
-    setState(() => _isLoading = false);
-
-    // 4. If user is NOT null, authentication was successful
+    // if user not null authentication is successful
     if (user != null) {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (_) => HomeScreen(
-            // Pass the actual Firebase user data, with safe fallbacks
-            userName: user.displayName ?? 'Unknown User',
-            userEmail: user.email ?? 'No email provided',
-            userImageUrl: user.photoURL ?? 'https://via.placeholder.com/150',
-          ),
-        ),
-      );
+      Navigator.of(
+        context,
+      ).pushReplacement(MaterialPageRoute(builder: (_) => HomeScreen()));
     } else {
-      // 5. If user IS null, they canceled the modal or an error occurred
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Sign in canceled or failed. Please try again.'),
+          content: Text('Sign in cancelled or failed.Please try again'),
           backgroundColor: Colors.redAccent,
         ),
       );
