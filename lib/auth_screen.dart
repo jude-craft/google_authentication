@@ -147,10 +147,10 @@ class _AuthScreenState extends State<AuthScreen>
                           width: 72,
                           height: 72,
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.06),
+                            color: Colors.white.withValues(alpha: 0.06),
                             borderRadius: BorderRadius.circular(20),
                             border: Border.all(
-                              color: Colors.white.withOpacity(0.1),
+                              color: Colors.white.withValues(alpha: 0.1),
                               width: 1,
                             ),
                           ),
@@ -185,7 +185,7 @@ class _AuthScreenState extends State<AuthScreen>
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 15,
-                        color: Colors.white.withOpacity(0.45),
+                        color: Colors.white.withValues(alpha: 0.45),
                         height: 1.5,
                         letterSpacing: 0.1,
                       ),
@@ -216,7 +216,7 @@ class _AuthScreenState extends State<AuthScreen>
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 12,
-                        color: Colors.white.withOpacity(0.25),
+                        color: Colors.white.withValues(alpha: 0.25),
                         height: 1.6,
                       ),
                     ),
@@ -264,11 +264,11 @@ class _GoogleSignInButtonState extends State<_GoogleSignInButton> {
           duration: const Duration(milliseconds: 150),
           height: 56,
           decoration: BoxDecoration(
-            color: _pressed ? Colors.white.withOpacity(0.88) : Colors.white,
+            color: _pressed ? Colors.white.withValues(alpha: 0.88) : Colors.white,
             borderRadius: BorderRadius.circular(16),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(_pressed ? 0.08 : 0.18),
+                color: Colors.black.withValues(alpha: _pressed ? 0.08 : 0.18),
                 blurRadius: _pressed ? 8 : 20,
                 offset: const Offset(0, 6),
               ),
